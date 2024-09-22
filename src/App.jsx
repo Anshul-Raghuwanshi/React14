@@ -1,25 +1,45 @@
-import About from "./components/About";
-import Home from "./components/Home";
-import Nav from "./components/Nav";
 function App() {
-  let data = "hello this is data from the server";
-  let subject = [ "hindi", "english", "math"];
-  let profile = {
-    name: "John Doe",
+  let users = [{
+    id: 1,
+    name: "John",
     age: 30,
-    city: "New York"
-  };
+  },
+  {
+    id:2,
+    name:"Era",
+    age: 24,
+  },
+  {
+    id: 3,
+    name: "Joe",
+    age: 33,
+  }
+];
+ let users1 = [{
+    id: 1,
+    name: "John",
+    age: 30,
+  },
+  {
+    id:2,
+    name:"Era",
+    age: 24,
+  },
+  {
+    id: 3,
+    name: "Joe",
+    age: 33,
+  }
+];
+
+  const r = users.map((u)=> <h1 key= {u.id}>{u.name} - {u.age}</h1>);
+  const r1 = users1.map((u)=> <h1 key= {u.id}>{u.name} - {u.age}</h1>);
+
   return (
       <div>
-        <Home/>
-        <About/>
-        <Nav/>
-        <h1>{data}</h1>
-        <h1>{subject}</h1>
-        <h1>{profile.name}</h1>
-        <h1>{profile.age}</h1>
-        <h1>{profile.city}</h1>
+        <h2>{r}</h2>
+        <h2>{r1}</h2>   
       </div>  
 )}
 
-export default App
+export default App;
