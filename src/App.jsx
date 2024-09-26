@@ -1,45 +1,17 @@
-function App() {
-  let users = [{
-    id: 1,
-    name: "John",
-    age: 30,
-  },
-  {
-    id:2,
-    name:"Era",
-    age: 24,
-  },
-  {
-    id: 3,
-    name: "Joe",
-    age: 33,
-  }
-];
- let users1 = [{
-    id: 1,
-    name: "John",
-    age: 30,
-  },
-  {
-    id:2,
-    name:"Era",
-    age: 24,
-  },
-  {
-    id: 3,
-    name: "Joe",
-    age: 33,
-  }
-];
+import React from 'react'
+import { useState } from 'react';
 
-  const r = users.map((u)=> <h1 key= {u.id}>{u.name} - {u.age}</h1>);
-  const r1 = users1.map((u)=> <h1 key= {u.id}>{u.name} - {u.age}</h1>);
+const App = () => {
+  const [time, settime] = useState(new Date().toLocaleTimeString());
+  setInterval(()=>{
+    settime(new Date().toLocaleTimeString());
+  },1000);
 
   return (
-      <div>
-        <h2>{r}</h2>
-        <h2>{r1}</h2>   
-      </div>  
-)}
+    <div>
+      <h1>{time}</h1>    
+    </div>
+  )
+}
 
-export default App;
+export default App
